@@ -1,0 +1,16 @@
+{
+  "name": "imortalize/app",
+  "description": "Imortalize - Memoriais",
+  "require": {
+    "php": ">=7.4",
+    "google/cloud-storage": "^1.31",
+    "chillerlan/php-qrcode": "^5.0",
+    "tecnickcom/tcpdf": "^6.10",
+    "stripe/stripe-php": "^19.3"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  }
+}

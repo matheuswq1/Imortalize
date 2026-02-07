@@ -1,0 +1,21 @@
+# Opcional: URL "bonita" para memoriais públicos
+# Ex.: /m/maria-silva em vez de /memorial-publico.php?slug=maria-silva
+#
+# Como usar: renomeie para .htaccess e coloque na raiz do projeto (onde está index.php).
+# Requer mod_rewrite habilitado no Apache.
+#
+# Regra: /m/SLUG -> memorial-publico.php?slug=SLUG
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /Imortalize/
+
+  # Não reescrever arquivos e pastas reais
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # /m/slug-do-memorial -> memorial-publico.php?slug=slug-do-memorial
+  RewriteRule ^m/([a-z0-9\-]+)/?$ memorial-publico.php?slug=$1 [L,QSA]
+</IfModule>
+
+# Em produção, ajuste RewriteBase para a pasta do site (ex.: / ou /imortalize/).

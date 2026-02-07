@@ -1,0 +1,15 @@
+# Dependências
+vendor/
+
+# Arquivo de variáveis de ambiente (contém secrets)
+.env
+
+# Credenciais (não versionar)
+config/firebase-service-account.json
+config/database.config.php
+config/site.config.php
+config/stripe.config.php
+config/google-oauth.config.php
+
+# Logs de upload (evitar commitar erros com dados sensíveis)
+logs/upload.log
